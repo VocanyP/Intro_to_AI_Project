@@ -46,7 +46,7 @@ def testLegalActionGeneration(table, hand, testcase):
 if __name__ == "__main__":
 
     ### Leave this file in the folder where you run the code from or modify the path accordingly
-    F = open("studentTestCases_legalActions.txt", "r")
+    F = open("studentTestCases_legalActions2.txt", "r")
 
     correct = 0
     for line in F:
