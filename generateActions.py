@@ -16,7 +16,7 @@ def actions(table, hand):
     ####################################
 
     print("Discard List ")
-    discard(hand)
+    finalList = discard(hand)
 
     return finalList
 

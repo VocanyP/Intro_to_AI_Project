@@ -3,15 +3,13 @@ import itertools
 
 def discard(hand):
     discardList = []    #list to hold possible discard actions
-    tempList = []
 
-    for domino in hand:
-        tempList.append(list(domino))
-
-    for item in tempList:
+    for item in hand:
         temp = tuple(item)
-        temp2 = []
-        temp2.append(temp)
-        discardList.append(temp2)
+        tempList = []
+        tempList.append(temp)
+        discardList.append(tempList)
 
     print(discardList)
+
+    return discardList
