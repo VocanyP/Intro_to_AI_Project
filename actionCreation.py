@@ -10,6 +10,8 @@ def discard(hand):
 
     for item in tempList:
         temp = tuple(item)
-        discardList.append(temp)
+        temp2 = []
+        temp2.append(temp)
+        discardList.append(temp2)
 
     print(discardList)
