@@ -1,6 +1,6 @@
 import ast
 import itertools
-from actionCreation import discard
+from actionCreation import *
 
 
 def actions(table, hand):
@@ -15,6 +15,8 @@ def actions(table, hand):
     ####### YOUR CODE GOES HERE ########
     ####################################
 
+    print("Doubles List ")
+    doubles(table, hand)
     print("Discard List ")
     finalList = discard(hand)
 
