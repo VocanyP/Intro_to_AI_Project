@@ -15,10 +15,13 @@ def actions(table, hand):
     ####### YOUR CODE GOES HERE ########
     ####################################
 
-    print("Doubles List ")
-    doubles(table, hand)
-    print("Discard List ")
-    finalList = discard(hand)
+    discardList = discard(hand)
+    doubleList = doubles(table, hand)
+    finalList = discardList + doubleList
+
+
+    print("Final List:")
+    print(finalList)
 
     return finalList
 

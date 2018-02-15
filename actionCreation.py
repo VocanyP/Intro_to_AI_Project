@@ -16,6 +16,7 @@ def discard(hand):
 
 def doubles(table, hand):
     tableDoubles = []
+    finalDoubles = []
 
     for dblPip in table:
         if dblPip[0] == dblPip[1]:
@@ -25,12 +26,33 @@ def doubles(table, hand):
 
     for domino in hand:
         if domino[0] == domino[1]:
-            #tableDoubles = [domino] + tableDoubles
-            #print(tableDoubles)
             for x in range(1, len(tableDoubles) + 1):
                 for subset in itertools.combinations(tableDoubles, x):
                     print(subset)
+                    tempList = legalCheck(subset, domino, "double")
+                    if len(tempList) != 0:
+                        finalDoubles.append(tempList)
+                    print("Final Double ")
+                    print(finalDoubles)
+    return finalDoubles
 
-    #doubleList(table, domino)
+def legalCheck(doublelist, domino, test):
+    legalAction = []
+    totalSum = 0
 
-#def doubleList(table, domino):
+    if test == "double":
+        for item in doublelist:
+            print("Domino is ", domino, " Item is ", item)
+            totalSum = totalSum + item[0]
+        totalSum = totalSum + domino[0]
+        print(totalSum)
+        if totalSum % 5 == 0:
+            legalAction.append(domino)
+            for table in doublelist:
+                legalAction.append(table)
+            totalSum = 0
+    else:
+        print("Test not equal to double")
+    print("Legal Action ", legalAction)
+    return legalAction
+
