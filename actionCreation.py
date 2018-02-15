@@ -9,9 +9,8 @@ def discard(hand):
     discardList = []    #list to hold possible discard actions
 
     for item in hand:
-        temp = tuple(item)
         tempList = []
-        tempList.append(temp)
+        tempList.append(item)
         discardList.append(tempList)
 
     return discardList
@@ -23,8 +22,7 @@ def leftMatch(table, hand):
     for domino in hand:
         for pip in table:
             if domino[0] == pip[0]:
-                temp = tuple(pip)
-                tableLeft.append(temp)
+                tableLeft.append(pip)
         if len(tableLeft) != 0:
             for x in range(1, len(tableLeft) + 1):
                 for subset in itertools.combinations(tableLeft, x):
@@ -42,8 +40,7 @@ def rightMatch(table, hand):
     for domino in hand:
         for pip in table:
             if domino[1] == pip[1]:
-                temp = tuple(pip)
-                tableRight.append(temp)
+                tableRight.append(pip)
         if len(tableRight) != 0:
             for x in range(1, len(tableRight) + 1):
                 for subset in itertools.combinations(tableRight, x):
@@ -60,8 +57,7 @@ def doubles(table, hand):
 
     for dblPip in table:
         if dblPip[0] == dblPip[1]:
-            temp = tuple(dblPip)
-            tableDoubles.append(temp)
+            tableDoubles.append(dblPip)
 
     for domino in hand:
         if domino[0] == domino[1]:
@@ -87,7 +83,6 @@ def legalCheck(inputList, domino, test):
             legalActionDouble.append(domino)
             for table in inputList:
                 legalActionDouble.append(table)
-        totalSum = 0
         return legalActionDouble
     elif test == "left":
         for item in inputList:
@@ -97,7 +92,6 @@ def legalCheck(inputList, domino, test):
             legalActionLeft.append(domino)
             for table in inputList:
                 legalActionLeft.append(table)
-        totalSum = 0
         return legalActionLeft
     elif test == "right":
         for item in inputList:
@@ -107,7 +101,6 @@ def legalCheck(inputList, domino, test):
             legalActionRight.append(domino)
             for table in inputList:
                 legalActionRight.append(table)
-        totalSum = 0
         return legalActionRight
     else:
         print("No legal actions found")
