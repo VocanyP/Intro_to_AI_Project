@@ -1,3 +1,8 @@
+###Vocany Pitia
+###CSCE 4310
+###Homework 3
+###generateActions.py
+
 import ast
 import itertools
 from actionCreation import *
@@ -16,12 +21,10 @@ def actions(table, hand):
     ####################################
 
     discardList = discard(hand)
+    leftList = leftMatch(table, hand)
+    rightList = rightMatch(table, hand)
     doubleList = doubles(table, hand)
-    finalList = discardList + doubleList
-
-
-    print("Final List:")
-    print(finalList)
+    finalList = discardList + leftList + rightList + doubleList
 
     return finalList
 
@@ -50,7 +53,7 @@ def testLegalActionGeneration(table, hand, testcase):
 if __name__ == "__main__":
 
     ### Leave this file in the folder where you run the code from or modify the path accordingly
-    F = open("studentTestCases_legalActions2.txt", "r")
+    F = open("studentTestCases_legalActions.txt", "r")
 
     correct = 0
     for line in F:
