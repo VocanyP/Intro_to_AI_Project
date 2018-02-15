@@ -25,7 +25,6 @@ def actions(table, hand):
 
     return finalList
 
-
 def sortLists(listOfLegalAction):
     finallist = []
     for legalAction in listOfLegalAction:

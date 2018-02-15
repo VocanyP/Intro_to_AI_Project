@@ -14,6 +14,12 @@ def discard(hand):
 
     return discardList
 
+def lefteMatch():
+    print("Nothing")
+
+def rightMatch():
+    print("Nothing")
+
 def doubles(table, hand):
     tableDoubles = []
     finalDoubles = []
@@ -50,7 +56,7 @@ def legalCheck(doublelist, domino, test):
             legalAction.append(domino)
             for table in doublelist:
                 legalAction.append(table)
-            totalSum = 0
+        totalSum = 0
     else:
         print("Test not equal to double")
     print("Legal Action ", legalAction)
