@@ -28,7 +28,6 @@ def leftMatch(table, hand):
         if len(tableLeft) != 0:
             for x in range(1, len(tableLeft) + 1):
                 for subset in itertools.combinations(tableLeft, x):
-                    print(subset)
                     tempList = legalCheck(tableLeft, domino, "left")
                     if len(tempList) != 0:
                         finalLeft.append(tempList)
