@@ -20,11 +20,11 @@ def actions(table, hand):
     ####### YOUR CODE GOES HERE ########
     ####################################
 
-    discardList = discard(hand)
-    leftList = leftMatch(table, hand)
-    rightList = rightMatch(table, hand)
-    doubleList = doubles(table, hand)
-    finalList = discardList + leftList + rightList + doubleList
+    discardList = discard(hand)             #List of discard legal actions
+    leftList = leftMatch(table, hand)       #List of legal actions where the left pips match
+    rightList = rightMatch(table, hand)     #List of legal actions where the right pips macth
+    doubleList = doubles(table, hand)       #List of legal actions where there are doubles
+    finalList = discardList + leftList + rightList + doubleList     #The final list of legal actions composed of all legal actions
 
     return finalList
 
